@@ -181,22 +181,16 @@
 
         public static void MenuStart()
         {
-            if (SceneManager.scene.name == "Menu")
-            {
-                GameObject title = SceneManager.scene.gameObjects["Title"];
-                title.transform.position.x = Renderer.width / 2 - title.sprite.sprite.Length / 2;
-                title.transform.position.y = 10;
-            }
+            GameObject title = SceneManager.scene.gameObjects["Title"];
+            title.transform.position.x = Renderer.width / 2 - title.sprite.sprite.Length / 2;
+            title.transform.position.y = 10;
         }
 
         public static void MenuUpdate()
         {
             if (Input.wasPressedThisFrame && Input.lastKey == ConsoleKey.Enter)
             {
-                if (SceneManager.scene.name == "Menu")
-                {
-                    SceneManager.LoadScene("Game");
-                }
+                SceneManager.LoadScene("Game");
             }
         }
 
